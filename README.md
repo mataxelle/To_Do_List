@@ -23,7 +23,7 @@ Project : Develop a Todo list using PHP, MVC architecture.
 
 ## Development environment
 
-*  PHP 8.1.10
+*  PHP 8.2.20
 *  Mysql
 
 ## Install on local
