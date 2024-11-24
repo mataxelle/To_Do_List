@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\TaskModel;
+namespace App\Model;
 
 use Config\Database\Database;
 
