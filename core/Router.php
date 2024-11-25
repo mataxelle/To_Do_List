@@ -1,6 +1,6 @@
 <?php
 
-namespace core\Router;
+namespace core;
 
 use src\Controller\TaskController;
 
@@ -8,10 +8,11 @@ class Router
 {
     public function dispatch($uri)
     {
+        echo "Requested URI: $uri";
         $uri = trim($uri, '/');
         $controller = new TaskController;
 
-        if ($uri === 'tasks') {
+        if ($uri === '') {
             ($controller)->allTasks();
         } elseif ($uri === 'add') {
             ($controller)->add();

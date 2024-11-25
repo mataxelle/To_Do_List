@@ -1,10 +1,10 @@
 <?php
 
-namespace Config\Database;
+namespace config\Database;
 
 use PDO;
 use PDOException;
-use Config\Superglobals\Environnement;
+use config\Superglobals\Environnement;
 
 /**
  * Classe Database

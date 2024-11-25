@@ -1,6 +1,6 @@
 <?php
 
-namespace Config\Superglobals;
+namespace config\Superglobals;
 
 class Environnement
 {

@@ -1,0 +1,14 @@
+{
+    "name": "kadan/to_do_list",
+    "autoload": {
+        "psr-4": {
+            "core\\": "core/",
+            "config\\": "config/",
+            "src\\Controller\\": "src/Controller/",
+            "src\\Model\\": "src/Model/"
+        }
+    },
+    "require": {
+        "symfony/dotenv": "^7.1"
+    }
+}

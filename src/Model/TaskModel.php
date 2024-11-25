@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace src\Model;
 
-use Config\Database\Database;
+use config\Database\Database;
 
 class TaskModel extends Database
 {
@@ -12,6 +12,7 @@ class TaskModel extends Database
         $db = new Database();
 
         $response = $db->query('SELECT * FROM task');
+        //var_dump($response);
         return $response->fetchAll();
     }
 }

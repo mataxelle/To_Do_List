@@ -2,11 +2,22 @@
 
 namespace src\Controller;
 
-use Config\Database\Database;
+use src\Model\TaskModel;
 
-class TaskController extends Database
+class TaskController
 {
-    public function allTasks() {}
+    private $taskModel;
+
+    public function __construct()
+    {
+        $this->taskModel = new TaskModel();
+    }
+
+    public function allTasks()
+    {
+        $tasks = $this->taskModel->getAllTasks();
+        include '../src/Vue/index.php';
+    }
 
     public function add() {}
 
