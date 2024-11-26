@@ -19,7 +19,15 @@ class TaskController
         include '../src/Vue/index.php';
     }
 
-    public function add() {}
+    public function add()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->taskModel->add($_POST['title'], $_POST['content']);
+            header('Location: /');
+        } else {
+            include '../src/vue/add.php';
+        }
+    }
 
     public function update() {}
 

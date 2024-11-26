@@ -8,7 +8,6 @@ class Router
 {
     public function dispatch($uri)
     {
-        echo "Requested URI: $uri";
         $uri = trim($uri, '/');
         $controller = new TaskController;
 
