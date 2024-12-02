@@ -26,8 +26,16 @@ class TaskModel extends Database
         $status = 'pending';
         $date = (new DateTime())->format('Y-m-d h:i:s');
 
-        $newTask = $this->db->prepare("INSERT INTO task (title, content, status, createdAt, updatedAt) VALUES (:title, :content, '$status', '$date', '$date')");
-        $newTask->execute([':title' => $title, ':content' => $content]);
+        $sql = "INSERT INTO task (title, content, status, createdAt, updatedAt) VALUES (:title, :content, :status, :createdAt, :updatedAt)";
+
+        $newTask = $this->db->prepare($sql);
+        $newTask->execute([
+            ':title' => $title,
+            ':content' => $content,
+            ':status' => $status,
+            ':createdAt' => $date,
+            ':updatedAt' => $date
+        ]);
         return $newTask;
     }
 
