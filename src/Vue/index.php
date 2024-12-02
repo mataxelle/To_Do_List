@@ -8,7 +8,12 @@
 
 <body>
     <h1>Ma To-Do List</h1>
-    <a href="/add">Ajouter une tâche</a>
+    <form method="POST" action="/add">
+        <input type="text" name="title" placeholder="Titre de la tâche" required>
+        <textarea name="content" placeholder="Description"></textarea>
+        <button type="submit">Ajouter une tâche</button>
+    </form>
+
     <ul>
         <?php foreach ($tasks as $task): ?>
             <li>
