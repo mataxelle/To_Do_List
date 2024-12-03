@@ -24,12 +24,22 @@ class TaskController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->taskModel->add($_POST['title'], $_POST['content']);
             header('Location: /');
-        } else {
-            include '../src/vue/add.php';
+            exit();
         }
     }
 
-    public function update() {}
-
-    public function delete() {}
+    public function delete($id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (filter_var($id, FILTER_VALIDATE_INT)) {
+                $this->taskModel->delete($id);
+                header('Location: /');
+                exit();
+            } else {
+                echo 'Invalidated ID.';
+            }
+        } else {
+            echo 'Unauthorized method.';
+        }
+    }
 }

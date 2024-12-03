@@ -24,9 +24,10 @@ class TaskModel extends Database
     public function add($title, $content)
     {
         $status = 'pending';
-        $date = (new DateTime())->format('Y-m-d h:i:s');
+        $date = (new DateTime())->format('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO task (title, content, status, createdAt, updatedAt) VALUES (:title, :content, :status, :createdAt, :updatedAt)";
+        $sql = "INSERT INTO task (title, content, status, createdAt, updatedAt)
+                VALUES (:title, :content, :status, :createdAt, :updatedAt)";
 
         $newTask = $this->db->prepare($sql);
         $newTask->execute([
@@ -39,7 +40,14 @@ class TaskModel extends Database
         return $newTask;
     }
 
-    public function update() {}
+    public function delete($id)
+    {
+        $sql = "DELETE FROM task
+                WHERE id = :id";
 
-    public function delete() {}
+        $task = $this->db->prepare($sql);
+        $task->execute([
+            ':id' => $id,
+        ]);
+    }
 }

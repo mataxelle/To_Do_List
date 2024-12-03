@@ -17,8 +17,12 @@
     <ul>
         <?php foreach ($tasks as $task): ?>
             <li>
-                <?= htmlspecialchars($task['title']); ?>
-                <a href="/delete/<?= $task['id']; ?>">Supprimer</a>
+                <h3>
+                    <?= htmlspecialchars($task['title']); ?>
+                </h3>
+                <form action="/delete/<?= $task['id']; ?>" method="POST">
+                    <button type="submit">Supprimer</button>
+                </form>
             </li>
         <?php endforeach; ?>
     </ul>
