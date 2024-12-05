@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <div>
+        <a href="/">Retour</a>
+    </div>
     <h1>Modification</h1>
     <form method="POST" action="/update/<?= $task['id']; ?>">
         <input type="text" name="title" value="<?= htmlspecialchars($task['title']); ?>" required>
