@@ -51,3 +51,18 @@ input[type="submit"]:hover {
 .tasksList:nth-child(even) {
   background-color: #fff;
 }
+
+.home:link,
+.home:visited {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.home:hover,
+.home:active {
+  background-color: #45a049;
+}

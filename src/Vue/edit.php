@@ -10,7 +10,7 @@
 
 <body>
     <div>
-        <a href="/">Retour</a>
+        <a class="home" href="/">Retour</a>
     </div>
 
     <h1>Modification</h1>
