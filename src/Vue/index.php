@@ -19,19 +19,27 @@
         </form>
     </section>
 
-    <ul>
-        <?php foreach ($tasks as $task): ?>
-            <li class="tasksList">
-                <h3>
-                    <?= htmlspecialchars($task['title']); ?>
-                </h3>
-                <a href="/update/<?= $task['id']; ?>">Modifier</a>
-                <form action="/delete/<?= $task['id']; ?>" method="POST">
-                    <button type="submit">Supprimer</button>
-                </form>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+    <section id="taskSection">
+        <ul class="taskSectionList">
+            <?php foreach ($tasks as $task): ?>
+                <li class="tasksList">
+                    <h3>
+                        <?= htmlspecialchars($task['title']); ?>
+                    </h3>
+                    <div class="tasksListBtn">
+                        <a class="button editBtn" href="/update/<?= $task['id']; ?>">
+                            <img class="icon" src="/img/edit.svg" alt="edit icon">
+                        </a>
+                        <form action="/delete/<?= $task['id']; ?>" method="POST">
+                            <button class="button deleteBtn" type="submit">
+                                <img class="icon" src="/img/close.svg" alt="close icon">
+                            </button>
+                        </form>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
 </body>
 
 </html>

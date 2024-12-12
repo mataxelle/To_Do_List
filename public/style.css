@@ -3,12 +3,19 @@ h1 {
   text-align: center;
 }
 
-#formSection {
+#formSection,
+#taskSection {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
   width: 60%;
+  margin: 20px auto;
+}
+
+.taskSectionList {
+  list-style-type: none;
   margin: auto;
+  padding: 0;
 }
 
 input[type="text"],
@@ -45,11 +52,44 @@ input[type="submit"]:hover {
 }
 
 .tasksList:nth-child(odd) {
-  background-color: #d0e1f9;
+  background-color: #f9f9f9;
 }
 
-.tasksList:nth-child(even) {
-  background-color: #fff;
+.tasksList:hover {
+  background: #ddd;
+}
+
+.tasksList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasksListBtn {
+  display: flex;
+}
+
+.button {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.editBtn {
+  background-color: #4caf50;
+}
+
+.deleteBtn {
+  background-color: #f52821;
+}
+
+.icon:hover {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+    hue-rotate(281deg) brightness(101%) contrast(101%);
 }
 
 .home:link,
@@ -65,4 +105,10 @@ input[type="submit"]:hover {
 .home:hover,
 .home:active {
   background-color: #45a049;
+}
+
+@media (max-width: 800px) {
+  .tasksList {
+    flex-direction: column;
+  }
 }
