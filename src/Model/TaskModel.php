@@ -17,7 +17,7 @@ class TaskModel extends Database
 
     public function getAllTasks()
     {
-        $response = $this->db->query('SELECT * FROM task');
+        $response = $this->db->query('SELECT * FROM task ORDER BY createdAt DESC');
         return $response->fetchAll();
     }
 
