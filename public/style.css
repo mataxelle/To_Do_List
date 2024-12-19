@@ -62,15 +62,17 @@ input[type="submit"]:hover {
 .tasksList {
   display: flex;
   justify-content: space-between;
+  padding: 5px;
 }
 
 .tasksListBtn {
   display: flex;
+  align-items: flex-start;
 }
 
 .button {
   border: none;
-  padding: 15px 32px;
+  padding: 10px 26px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
