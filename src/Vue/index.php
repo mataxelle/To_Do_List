@@ -23,9 +23,14 @@
         <ul class="taskSectionList">
             <?php foreach ($tasks as $task): ?>
                 <li class="tasksList">
-                    <h3>
-                        <?= htmlspecialchars($task['title']); ?>
-                    </h3>
+                    <details>
+                        <summary>
+                            <?= htmlspecialchars($task['title']); ?>
+                        </summary>
+                        <p>
+                            <?= htmlspecialchars($task['content']); ?>
+                        </p>
+                    </details>
                     <div class="tasksListBtn">
                         <a class="button editBtn" href="/update/<?= $task['id']; ?>">
                             <img class="icon" src="/img/edit.svg" alt="edit icon">
